@@ -8,10 +8,12 @@
     <string name="moneda">Preferencias de moneda:</string>
     <string name="comprar">Comprar</string>
     <string name="limpiar">Limpiar</string>
+    <string name="selecion">Seleccione una opción</string>
 
     <string name="cuero">Cuero</string>
     <string name="cuerda">Cuerda</string>
     <string-array name="StringCmbUno">
+        <item>@string/selecion</item>
         <item>@string/cuero</item>
         <item>@string/cuerda</item>
     </string-array>
@@ -19,6 +21,7 @@
     <string name="martillo">Martillo</string>
     <string name="ancla">Ancla</string>
     <string-array name="StringCmbDos">
+        <item>@string/selecion</item>
         <item>@string/martillo</item>
         <item>@string/ancla</item>
     </string-array>
@@ -27,6 +30,7 @@
     <string name="plata">Plata</string>
     <string name="niquel">Niquel</string>
     <string-array name="StringCmbTres">
+        <item>@string/selecion</item>
         <item>@string/oro</item>
         <item>@string/plata</item>
         <item>@string/niquel</item>
@@ -35,9 +39,11 @@
     <string name="cop">COP ($)</string>
     <string name="usd">($) USD </string>
     <string-array name="StringCmbCuatro">
+        <item>@string/selecion</item>
         <item>@string/cop</item>
         <item>@string/usd</item>
     </string-array>
+    <string name="seleccione">Seleccione</string>
 
 
 </resources>

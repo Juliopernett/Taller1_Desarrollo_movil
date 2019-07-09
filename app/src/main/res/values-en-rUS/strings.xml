@@ -18,4 +18,6 @@
     <string name="oro">Gold, Pink Gold</string>
     <string name="plata">Silver</string>
     <string name="usd">"($) USD "</string>
+    <string name="seleccione">Select</string>
+    <string name="selecion">Choose an option</string>
 </resources>
