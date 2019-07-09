@@ -7,6 +7,15 @@
     <string name="moneda">Preferred currency:</string>
     <string name="cantidad">Quantity to buy</string>
     <string name="comprar">Buy</string>
-    <string name="limpiar">clean</string>
+    <string name="limpiar">Clean</string>
     <string name="tipo_mat_precioso">Precious material:</string>
+    <string name="ancla">Anchor</string>
+    <string name="cop">COP ($)</string>
+    <string name="cuerda">Rope</string>
+    <string name="cuero">Leather</string>
+    <string name="martillo">Hammer</string>
+    <string name="niquel">Nickel</string>
+    <string name="oro">Gold, Pink Gold</string>
+    <string name="plata">Silver</string>
+    <string name="usd">"($) USD "</string>
 </resources>

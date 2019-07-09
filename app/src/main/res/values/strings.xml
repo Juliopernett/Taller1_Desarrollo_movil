@@ -11,14 +11,14 @@
 
     <string name="cuero">Cuero</string>
     <string name="cuerda">Cuerda</string>
-    <string-array name="cmbUno">
+    <string-array name="StringCmbUno">
         <item>@string/cuero</item>
         <item>@string/cuerda</item>
     </string-array>
 
     <string name="martillo">Martillo</string>
     <string name="ancla">Ancla</string>
-    <string-array name="cmbDos">
+    <string-array name="StringCmbDos">
         <item>@string/martillo</item>
         <item>@string/ancla</item>
     </string-array>
@@ -26,7 +26,7 @@
     <string name="oro">Oro, Oro Rosado</string>
     <string name="plata">Plata</string>
     <string name="niquel">Niquel</string>
-    <string-array name="cmbTres">
+    <string-array name="StringCmbTres">
         <item>@string/oro</item>
         <item>@string/plata</item>
         <item>@string/niquel</item>
@@ -34,7 +34,7 @@
 
     <string name="cop">COP ($)</string>
     <string name="usd">($) USD </string>
-    <string-array name="cmbCuatro">
+    <string-array name="StringCmbCuatro">
         <item>@string/cop</item>
         <item>@string/usd</item>
     </string-array>
