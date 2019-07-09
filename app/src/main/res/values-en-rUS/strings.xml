@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bracelet XYZ</string>
+    <string name="mensaje_superior">Please choose your preferred combination, enter the amount and add to the cart.</string>
+    <string name="material">Preferred material:</string>
+    <string name="tipo_dije">Type of charm:</string>
+    <string name="moneda">Preferred currency:</string>
+    <string name="cantidad">Quantity to buy</string>
+    <string name="comprar">Buy</string>
+    <string name="limpiar">clean</string>
+    <string name="tipo_mat_precioso">Precious material:</string>
+</resources>
