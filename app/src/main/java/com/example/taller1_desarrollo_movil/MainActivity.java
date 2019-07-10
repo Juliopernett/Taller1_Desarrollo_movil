@@ -42,5 +42,5 @@ public class MainActivity extends AppCompatActivity {
         cmbPre3.setAdapter(adapter2);
         cmbMod4.setAdapter(adapter3);
     }
-    
+
 }
