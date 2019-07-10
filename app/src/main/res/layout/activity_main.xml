@@ -62,7 +62,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:entries="@array/StringCmbUno"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:scrollbarSize="20dp" />
 
         </LinearLayout>
 
