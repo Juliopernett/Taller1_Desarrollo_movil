@@ -3,7 +3,9 @@ package com.example.taller1_desarrollo_movil;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import static com.example.taller1_desarrollo_movil.R.mipmap.ic_launcher;
@@ -13,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     String cmb1[], cmb2[], cmb3[], cmb4[];
     Spinner cmbMat1,cmbDij2, cmbPre3, cmbMod4;
+    EditText txtCant;
+    int cant=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         cmbDij2 = findViewById(R.id.cmbDos);
         cmbPre3 = findViewById(R.id.cmbTres);
         cmbMod4 = findViewById(R.id.cmbCuatro);
+        txtCant = findViewById(R.id.txtCantidad);
 
         //traemos las opciones del array
         cmb1 = getResources().getStringArray(R.array.StringCmbUno);
@@ -41,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
         cmbDij2.setAdapter(adapter1);
         cmbPre3.setAdapter(adapter2);
         cmbMod4.setAdapter(adapter3);
+    }
+
+    public void limpiar(View v) {
+        txtCant.setText("");
     }
 
 }

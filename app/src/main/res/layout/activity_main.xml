@@ -205,6 +205,7 @@
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
                 android:minHeight="@android:dimen/notification_large_icon_height"
+                android:onClick="limpiar"
                 android:text="@string/limpiar"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"
