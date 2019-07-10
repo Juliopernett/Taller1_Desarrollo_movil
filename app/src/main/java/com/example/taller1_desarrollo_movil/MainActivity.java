@@ -1,10 +1,13 @@
 package com.example.taller1_desarrollo_movil;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,12 +17,12 @@ import static com.example.taller1_desarrollo_movil.R.mipmap.ic_launcher_round;
 
 public class MainActivity extends AppCompatActivity {
 
-    static double pre_dolar=3200;
+    static double val_dol=3200; /*valor del dolar*/
 
     String cmb1[], cmb2[], cmb3[], cmb4[];
     Spinner cmbMat1,cmbDij2, cmbPre3, cmbMod4;
     EditText txtCant;
-    TextView resultado;
+    TextView result;
     int cant=0;
 
     @Override
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         cmbPre3 = findViewById(R.id.cmbTres);
         cmbMod4 = findViewById(R.id.cmbCuatro);
         txtCant = findViewById(R.id.txtCantidad);
-        resultado = findViewById(R.id.txtResultado);
+        result = findViewById(R.id.txtResultado);
 
         //traemos las opciones del array
         cmb1 = getResources().getStringArray(R.array.StringCmbUno);
@@ -55,93 +58,132 @@ public class MainActivity extends AppCompatActivity {
         cmbMod4.setAdapter(adapter3);
     }
 
-    /*public  void validacion*/
-
     public  void comprar(View v){
-
-        double total = 0;
-        double valunitario = 0;
-        /*Grupo 1*/
-        if((cmbMat1.getSelectedItemPosition() == 1)
-                && (cmbDij2.getSelectedItemPosition() == 1)
-                &&  (cmbPre3.getSelectedItemPosition() == 1)){
-            valunitario = 100;
-        }else
-            if ((cmbMat1.getSelectedItemPosition()==1)
-                && (cmbDij2.getSelectedItemPosition()==1)
-                &&  (cmbPre3.getSelectedItemPosition()==2)) {
-                valunitario =80;
-        }else
-            if ((cmbMat1.getSelectedItemPosition() == 1)
-                && (cmbDij2.getSelectedItemPosition() == 1)
-                &&  (cmbPre3.getSelectedItemPosition() == 3)) {
-                valunitario = 70;
-        }
-        else /*Grupo 2*/
-        if ((cmbMat1.getSelectedItemPosition() == 1)
-                && (cmbDij2.getSelectedItemPosition() == 2)
-                &&  (cmbPre3.getSelectedItemPosition() == 1)) {
-                valunitario = 120;
-        }else
-        if ((cmbMat1.getSelectedItemPosition() == 1)
-                && (cmbDij2.getSelectedItemPosition() == 2)
-                &&  (cmbPre3.getSelectedItemPosition() == 2)) {
+        if(validar()){
+            double total = 0;
+            double valunitario = 0;
+            /*Grupo 1*/
+            if((cmbMat1.getSelectedItemPosition() == 1)
+                    && (cmbDij2.getSelectedItemPosition() == 1)
+                    &&  (cmbPre3.getSelectedItemPosition() == 1)){
                 valunitario = 100;
-        }else
-        if ((cmbMat1.getSelectedItemPosition() == 1)
-                && (cmbDij2.getSelectedItemPosition() == 2)
-                &&  (cmbPre3.getSelectedItemPosition() == 3)) {
-                valunitario = 90;
-        }
-        else /*Grupo 3*/
-        if ((cmbMat1.getSelectedItemPosition() == 2)
-                && (cmbDij2.getSelectedItemPosition() == 1)
-                &&  (cmbPre3.getSelectedItemPosition() == 1)) {
-                valunitario = 90;
-        }else
-        if ((cmbMat1.getSelectedItemPosition() == 2)
-                && (cmbDij2.getSelectedItemPosition() == 1)
-                &&  (cmbPre3.getSelectedItemPosition() == 2)) {
+            }else
+            if ((cmbMat1.getSelectedItemPosition()==1)
+                    && (cmbDij2.getSelectedItemPosition()==1)
+                    &&  (cmbPre3.getSelectedItemPosition()==2)) {
+                valunitario =80;
+            }else
+            if ((cmbMat1.getSelectedItemPosition() == 1)
+                    && (cmbDij2.getSelectedItemPosition() == 1)
+                    &&  (cmbPre3.getSelectedItemPosition() == 3)) {
                 valunitario = 70;
-        }else
-        if ((cmbMat1.getSelectedItemPosition() == 2)
-                && (cmbDij2.getSelectedItemPosition() == 1)
-                &&  (cmbPre3.getSelectedItemPosition() == 3)) {
-                valunitario = 50;
+            }
+            else /*Grupo 2*/
+                if ((cmbMat1.getSelectedItemPosition() == 1)
+                        && (cmbDij2.getSelectedItemPosition() == 2)
+                        &&  (cmbPre3.getSelectedItemPosition() == 1)) {
+                    valunitario = 120;
+                }else
+                if ((cmbMat1.getSelectedItemPosition() == 1)
+                        && (cmbDij2.getSelectedItemPosition() == 2)
+                        &&  (cmbPre3.getSelectedItemPosition() == 2)) {
+                    valunitario = 100;
+                }else
+                if ((cmbMat1.getSelectedItemPosition() == 1)
+                        && (cmbDij2.getSelectedItemPosition() == 2)
+                        &&  (cmbPre3.getSelectedItemPosition() == 3)) {
+                    valunitario = 90;
+                }
+                else /*Grupo 3*/
+                    if ((cmbMat1.getSelectedItemPosition() == 2)
+                            && (cmbDij2.getSelectedItemPosition() == 1)
+                            &&  (cmbPre3.getSelectedItemPosition() == 1)) {
+                        valunitario = 90;
+                    }else
+                    if ((cmbMat1.getSelectedItemPosition() == 2)
+                            && (cmbDij2.getSelectedItemPosition() == 1)
+                            &&  (cmbPre3.getSelectedItemPosition() == 2)) {
+                        valunitario = 70;
+                    }else
+                    if ((cmbMat1.getSelectedItemPosition() == 2)
+                            && (cmbDij2.getSelectedItemPosition() == 1)
+                            &&  (cmbPre3.getSelectedItemPosition() == 3)) {
+                        valunitario = 50;
+                    }
+                    else /*Grupo 4*/
+                        if ((cmbMat1.getSelectedItemPosition() == 2)
+                                && (cmbDij2.getSelectedItemPosition() == 2)
+                                &&  (cmbPre3.getSelectedItemPosition() == 1)) {
+                            valunitario = 110;
+                        }else
+                        if ((cmbMat1.getSelectedItemPosition() == 2)
+                                && (cmbDij2.getSelectedItemPosition() == 2)
+                                &&  (cmbPre3.getSelectedItemPosition() == 2)) {
+                            valunitario = 90;
+                        }else
+                        if ((cmbMat1.getSelectedItemPosition() == 2)
+                                && (cmbDij2.getSelectedItemPosition() == 2)
+                                &&  (cmbPre3.getSelectedItemPosition() == 3)) {
+                            valunitario = 80;
+                        }
+
+            cant = Integer.parseInt(txtCant.getText().toString());
+            switch (cmbMod4.getSelectedItemPosition()){
+                case 1:
+                    total = (val_dol * valunitario) * cant;
+                    result.setText(getResources().getString(R.string.msj1)+ " " + cant + " "
+                            + getResources().getString(R.string.msj2) + " "  + total + " " + getResources().getString(R.string.cop));
+                    break;
+                case 2:
+                    total = valunitario * cant;
+                    result.setText(getResources().getString(R.string.msj1)+ " " + cant + " "
+                            + getResources().getString(R.string.msj2) + " "  + total + " " + getResources().getString(R.string.usd));
+                    break;
+            }
         }
-        else /*Grupo 4*/
-        if ((cmbMat1.getSelectedItemPosition() == 2)
-                && (cmbDij2.getSelectedItemPosition() == 2)
-                &&  (cmbPre3.getSelectedItemPosition() == 1)) {
-            valunitario = 110;
-        }else
-        if ((cmbMat1.getSelectedItemPosition() == 2)
-                && (cmbDij2.getSelectedItemPosition() == 2)
-                &&  (cmbPre3.getSelectedItemPosition() == 2)) {
-            valunitario = 90;
-        }else
-        if ((cmbMat1.getSelectedItemPosition() == 2)
-                && (cmbDij2.getSelectedItemPosition() == 2)
-                &&  (cmbPre3.getSelectedItemPosition() == 3)) {
-            valunitario = 80;
+    }
+
+
+    public boolean validar(){
+        if(cmbMat1.getSelectedItemPosition()==0){
+            AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setMessage(getResources().getString(R.string.error_1));
+            AlertDialog msj =alert.create();
+            msj.setTitle(getResources().getString(R.string.error));
+            msj.show();
+            cmbMat1.requestFocus();
+            return false;
+        }else if(cmbDij2.getSelectedItemPosition()==0){
+            AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setMessage(getResources().getString(R.string.error_2));
+            AlertDialog msj =alert.create();
+            msj.setTitle(getResources().getString(R.string.error));
+            msj.show();
+            cmbMat1.requestFocus();
+            return false;
+        }else if(cmbPre3.getSelectedItemPosition()==0){
+            AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setMessage(getResources().getString(R.string.error_3));
+            AlertDialog msj =alert.create();
+            msj.setTitle(getResources().getString(R.string.error));
+            msj.show();
+            cmbMat1.requestFocus();
+            return false;
+        }else if(txtCant.getText().toString().isEmpty()){
+            txtCant.setError(getResources().getString(R.string.error_4));
+            txtCant.requestFocus();
+            return false;
+        }else if(cmbMod4.getSelectedItemPosition()==0){
+            AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+            alert.setMessage(getResources().getString(R.string.error_5));
+            AlertDialog msj =alert.create();
+            msj.setTitle(getResources().getString(R.string.error));
+            msj.show();
+            cmbMat1.requestFocus();
+            return false;
         }
 
-        cant = Integer.parseInt(txtCant.getText().toString());
-        switch (cmbMod4.getSelectedItemPosition()){
-            case 1:
-                total = (pre_dolar * valunitario) * cant;
-                resultado.setText(getResources().getString(R.string.msj1)+ " " + cant + " "
-                        + getResources().getString(R.string.msj2) + " "  + total + " " + getResources().getString(R.string.cop));
-                break;
-            case 2:
-                total = valunitario * cant;
-                resultado.setText(getResources().getString(R.string.msj1)+ " " + cant + " "
-                        + getResources().getString(R.string.msj2) + " "  + total + " " + getResources().getString(R.string.usd));
-                break;
-        }
-
-
-
+        return true;
     }
 
     public void limpiar(View v) {
@@ -150,9 +192,8 @@ public class MainActivity extends AppCompatActivity {
         cmbDij2.setSelection(0);
         cmbPre3.setSelection(0);
         cmbMod4.setSelection(0);
-        resultado.setText("");
-        cmbMat1.requestFocus();
+        result.setText("");
+        /*cmbMat1.requestFocus(0);*/
     }
-
 
 }

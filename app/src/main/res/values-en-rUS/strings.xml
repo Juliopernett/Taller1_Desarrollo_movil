@@ -22,4 +22,10 @@
     <string name="selecion">Select</string>
     <string name="msj1">The total value to pay for</string>
     <string name="msj2">bracelets is of:</string>
+    <string name="error_1">Please select the preferred material</string>
+    <string name="error">Must complete all fields</string>
+    <string name="error_2">Please select the type of pendant</string>
+    <string name="error_3">Por favor seleccione el material precioso</string>
+    <string name="error_5">Please select the type of currency</string>
+    <string name="error_4">Please enter the amount to buy</string>
 </resources>

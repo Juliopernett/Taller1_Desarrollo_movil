@@ -47,5 +47,10 @@
     <string name="seleccione">Seleccione</string>
     <string name="msj1">El valor total a pagar por</string>
     <string name="msj2">brazaletes es de:</string>
-
+    <string name="error">Debe diligenciar todos los campos</string>
+    <string name="error_1">Por favor seleccione el material preferido</string>
+    <string name="error_2">Por favor seleccione el tipo de dije</string>
+    <string name="error_3">Por favor seleccione el material precioso</string>
+    <string name="error_4">Por favor ingrese la cantidad a comprar</string>
+    <string name="error_5">Por favor seleccione el tipo de moneda</string>
 </resources>
