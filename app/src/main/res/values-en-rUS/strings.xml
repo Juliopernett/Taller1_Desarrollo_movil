@@ -19,5 +19,5 @@
     <string name="plata">Silver</string>
     <string name="usd">"($) USD "</string>
     <string name="seleccione">Select</string>
-    <string name="selecion">Choose an option</string>
+    <string name="selecion">Select</string>
 </resources>

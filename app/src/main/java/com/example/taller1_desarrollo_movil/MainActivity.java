@@ -50,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void limpiar(View v) {
         txtCant.setText("");
+        cmbMat1.setSelection(0);
+        cmbDij2.setSelection(0);
+        cmbPre3.setSelection(0);
+        cmbMod4.setSelection(0);
+        /*falta la variable resultado*/
+        cmbMat1.requestFocus();
+
     }
 
 }
