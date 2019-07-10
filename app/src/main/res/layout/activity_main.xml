@@ -213,6 +213,14 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/txtResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="@android:dimen/notification_large_icon_height"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
