@@ -194,6 +194,7 @@
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
                 android:minHeight="@android:dimen/notification_large_icon_height"
+                android:onClick="comprar"
                 android:text="@string/comprar"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp"

@@ -36,14 +36,16 @@
         <item>@string/niquel</item>
     </string-array>
 
-    <string name="cop">COP ($)</string>
-    <string name="usd">($) USD </string>
+    <string name="cop">COP($)</string>
+    <string name="usd">USD($)</string>
     <string-array name="StringCmbCuatro">
         <item>@string/selecion</item>
         <item>@string/cop</item>
         <item>@string/usd</item>
     </string-array>
-    <string name="seleccione">Seleccione</string>
 
+    <string name="seleccione">Seleccione</string>
+    <string name="msj1">El valor total a pagar por</string>
+    <string name="msj2">brazaletes es de:</string>
 
 </resources>
